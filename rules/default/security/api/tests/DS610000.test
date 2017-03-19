@@ -1,0 +1,9 @@
+// Matches
+
+<a href="foo" target="_blank" bar="quux">bing</a>
+<a target="_blank">bing</a>
+
+// Doesn't Match
+
+<a href="foo" target="_blank" rel="noopener noreferer" bar="quux">bing</a>
+<a href="foo" target="_blank2" bar="quux">bing</a>

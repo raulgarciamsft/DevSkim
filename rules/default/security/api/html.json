@@ -1,0 +1,28 @@
+[    {
+        "id": "DS610000",
+        "name": "HTML Link Missing noopener or noreferrer",
+        "tags": [
+            "API.DangerousAPI"
+        ],
+        "applies_to": [
+        ],
+        "severity": "moderate",
+        "description": "When you use target=\"_blank\", you should also use rel=\"noopener noreferrer\". See <a href=\"https://mathiasbynens.github.io/rel-noopener\">https://mathiasbynens.github.io/rel-noopener</a> for more information.",
+        "replacement": "",
+        "rule_info": "https://github.com/Microsoft/DevSkim/blob/master/guidance/DS610000.md",
+        "patterns": [
+            {
+                "pattern": "target.*_blank",
+                "type": "regex-word",
+                "conditions": [
+                    {
+                        "name": "line-match-any",
+                        "value": ["noopener", "noreferrer"],
+                        "invert": true
+                    }
+                ]
+            }
+        ],
+        "fix_it": []
+    }
+]
