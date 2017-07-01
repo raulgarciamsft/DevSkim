@@ -1,0 +1,10 @@
+// Flag These
+<a href="https://microsoft.com" target="_blank">microsoft.com</a>
+<a href="https://microsoft.com" target="_blank" rel="noopener noreferer">microsoft.com</a>
+<a href="https://microsoft.com" target="_blank" rel="noreferrer">microsoft.com</a>
+<a href="https://microsoft.com" target="_blank" rel="noopener">microsoft.com</a>
+
+// Not These
+<a href="https://microsoft.com">microsoft.com</a>
+<a href="https://microsoft.com" target="_blank" rel="noopener noreferrer">microsoft.com</a>
+

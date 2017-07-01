@@ -35,7 +35,14 @@
         "patterns": [
             {
                 "pattern": "http:",
-                "type": "substring"
+                "type": "substring",
+                "conditions": [
+                    {
+                        "name": "match-prefix-any",
+                        "value": ["xmlns=\""],
+                        "invert": true
+                    }
+                ]
             }
         ],
         "fix_it": [

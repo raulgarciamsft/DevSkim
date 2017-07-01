@@ -1,0 +1,28 @@
+[    {
+        "id": "DS610000",
+        "name": "HTML link missing noopener and noreferrer",
+        "tags": [
+            "API.DangerousAPI"
+        ],
+        "applies_to": [
+        ],
+        "severity": "manual-review",
+        "description": "Cross domain anchor tags with target=\"_blank\", you should also use rel=\"noopener noreferrer\".",
+        "replacement": "",
+        "rule_info": "https://github.com/Microsoft/DevSkim/blob/master/guidance/DS610000.md",
+        "patterns": [
+            {
+                "pattern": "target.*_blank",
+                "type": "regex",
+                "conditions": [
+                    {
+                        "name": "line-match-all",
+                        "value": ["noopener", "noreferrer"],
+                        "invert": true
+                    }
+                ]
+            }
+        ],
+        "fix_it": []
+    }
+]
