@@ -1,0 +1,75 @@
+[
+    {
+        "name": "Deprecated WDK function detected",
+        "id": "DS155000",
+        "description": "These functions have been deprecated, and it is recommended to use an alternative API instead. In most cases there exists a function that directly replaces the deprecated one.",
+        "recommendation": "",
+        "applies_to": [
+            "c",
+            "cpp",
+            "objective-c"
+        ],
+        "tags": [
+            "API.DeprecatedAPI.DeprecatedWdkApi"
+        ],
+        "severity": "best-practice",
+        "_comment": "",
+        "rule_info": "DS155000.md",
+        "patterns": [
+          {
+            "pattern": "(ExAllocatePoolWithTag|ExAllocatePoolWithTagPriority|ExAllocatePoolWithQuotaTag|ExAllocatePoolWithTagFromNode)",
+            "type": "regex-word",
+            "scopes": [
+              "code"
+            ],
+            "_comment": ""
+          }
+        ]
+    },
+  {
+    "name": "Deprecated WDK function detected (ExAllocatePoolWithTag)",
+    "id": "DS155001",
+    "description": "ExAllocatePoolWithTag is being deprecated, and it will no longer be available as part of the WDK in the future.",
+    "recommendation": "Replace usage with ExAllocatePoolWithTag_Zero.",
+    "overrides": [
+      "DS155000"
+    ],
+    "applies_to": [
+      "c",
+      "cpp",
+      "objective-c"
+    ],
+    "tags": [
+      "API.DeprecatedAPI.DeprecatedWdkApi"
+    ],
+    "severity": "best-practice",
+    "_comment": "",
+    "rule_info": "DS155001.md",
+    "patterns": [
+      {
+        "pattern": "\\bExAllocatePoolWithTag\\s*\\(([^,]+),([^,]+?),([^,]+?)\\)",
+        "type": "regex",
+        "scopes": [
+          "code"
+        ],
+        "_comment": ""
+      }
+    ],
+    "fix_its": [
+      {
+        "name": "Change to ExAllocatePoolWithTag_Zero",
+        "type": "regex-replace",
+        "_comment": "",
+        "replacement": "ExAllocatePoolWithTag_Zero($1, $2, $3)",
+        "pattern": {
+          "pattern": "\\bExAllocatePoolWithTag\\s*\\(([^,]+),([^,]+?),([^,]+?)\\)",
+          "type": "regex",
+          "scopes": [
+            "code"
+          ],
+          "_comment": ""
+        }
+      }
+    ]
+  }
+]

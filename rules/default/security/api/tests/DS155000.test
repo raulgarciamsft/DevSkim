@@ -1,0 +1,14 @@
+line: 3,3
+line: 4,3
+line: 5,3
+line: 6,3
+=====
+int main ()
+{
+  ExAllocatePoolWithTag();
+  ExAllocatePoolWithTagPriority();
+  ExAllocatePoolWithQuotaTag();
+  ExAllocatePoolWithTagFromNode();
+
+  return 0;
+}
